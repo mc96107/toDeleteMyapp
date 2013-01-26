@@ -18,6 +18,18 @@ js/lib/layouts/css/layouts.css
 ----------------
 js/lib/layouts/css/layouts.css
 
+stylesheets/app.css
+----------------
+stylesheets/app.css
+
+stylesheets/foundation.css
+----------------
+stylesheets/foundation.css
+
+stylesheets/foundation.min.css
+----------------
+stylesheets/foundation.min.css
+
 js/lib/../app.js
 ----------------
 js/lib/receiptverifier.js
