@@ -21,6 +21,7 @@
     #todo-list .alert-box {
       display: none; /* Hides input box*/
     }
+
 	
     #todo-list .editing .label {
       display: none; /* Hides label text when .editing*/
@@ -39,7 +40,7 @@
     }
 	
 	#todo-list .editing .alert-box {
-      display: inline; /* Hides input box*/
+      display: block; /* Hides input box*/
     }
   </style>
     <!-- Included CSS Files (Compressed) -->
@@ -80,15 +81,16 @@
   <!-- Templates -->
   <script type="text/template" id="item-template">
     <div class="view">
+<td class="three">
+      <button class="destroy">remove</button>
+</td>
 	<td class="one">
       <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
 </td><td class="eight"><p>
       <span class="label"><%- title %></span>
 	  <div class="alert-box">
-      <input class="edit" value="<%- title %>"></p>
+      <textarea class="edit"><%- title %></textarea></p>
 	</div>
-</td><td class="three">
-      <button class="destroy">remove</button>
 </td>
 
      </div>
