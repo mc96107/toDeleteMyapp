@@ -40,7 +40,7 @@
     }
 	
 	#todo-list .editing .alert-box {
-      display: inline; /* Hides input box*/
+      display: block; /* Hides input box*/
     }
   </style>
     <!-- Included CSS Files (Compressed) -->
@@ -54,12 +54,13 @@
   <!-- ========= -->
 
 <!--Based on code from <a href="http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/">here</a>-->
-
 <div class="row">
   <section id="todoapp">
 <div class="twelve columns">
       
       <h2>Todos</h2>
+<p>Draft application developed during #FirefoxOSAppDays in Athens.</p>
+<p><a href="#"  id="install_app"> Install as a web app. </a></p>
       <input id="new-todo" class="twelve" placeholder="What needs to be done?" autofocus>
 	  <ul class="button-group even three-up">
     <li>     <a href="#/" class="button">all</a> </li>
@@ -262,7 +263,20 @@
     Backbone.history.start();
     app.appView = new app.AppView();
 
+$(document).ready(function() {
+$('#install_app').click(function(){
+    var request = window.navigator.mozApps.install('http://mc96107.github.com/sunNshadow/manifest.webapp');
+    request.onsuccess = function () {
+	// Save the App object that is returned
+      var appRecord = this.result;
+    };
+    request.onerror = function () {
+      // Display the error information from the DOMError object
+      alert('Install failed, error: ' + this.error.name);
+    };
+  });
+});
   </script>
-  
+
 </body>
 </html>
