@@ -43,7 +43,7 @@
   <!-- ========= -->
 <div class="row">
   <section id="todoapp">
-<div class="twelve mobile-one columns">
+<div class="twelve columns">
       
       <h1>Todos</h1>
       <input id="new-todo" placeholder="What needs to be done?" autofocus>
@@ -53,9 +53,7 @@
   <li> <a href="#/completed" class="button small">show completed</a></li>
 	</ul>
       <ul id="todo-list"></ul>
-  <div>
-    <p>Based on code from <a href="http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/">here</a></p>
-  </div>
+
 </div>
   </section>
 
