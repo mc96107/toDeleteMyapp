@@ -65,8 +65,13 @@
   <li> <a href="#/pending" class="button">pending</a> </li>
   <li> <a href="#/completed" class="button">completed</a></li>
 	</ul>
-      <ul id="todo-list"></ul>
-
+<div class="row">
+<table class="twelve">
+	<tbody> 
+      <tr id="todo-list"></tr>
+  </tbody>
+</table>
+</div>
 </div>
   </section>
 
@@ -75,8 +80,7 @@
   <!-- Templates -->
   <script type="text/template" id="item-template">
     <div class="view">
-	<table class="twelve">
-	<tbody><tr> <td class="one">
+	<td class="one">
       <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
 </td><td class="eight"><p>
       <span class="label"><%- title %></span>
@@ -85,9 +89,8 @@
 	</div>
 </td><td class="three">
       <button class="destroy">remove</button>
-</td></tr>
-  </tbody>
-</table>
+</td>
+
      </div>
 
   </script>
@@ -146,7 +149,7 @@
     
     // renders individual todo items list (li)
     app.TodoView = Backbone.View.extend({
-      tagName: 'li',
+      tagName: 'tr',
       template: _.template($('#item-template').html()),
       render: function(){
         this.$el.html(this.template(this.model.toJSON()));
