@@ -59,8 +59,7 @@
 <div class="twelve columns">
       
       <h2>Todos</h2>
-<p>Draft application developed during #FirefoxOSAppDays in Athens.</p>
-<p><a href="#"  id="install_app"> Install as a web app. </a></p>
+<p>Draft application developed during #FirefoxOSAppDays in Athens.<br><a href="#"  id="install_app"> Install as a web app. </a></p>
       <input id="new-todo" class="twelve" placeholder="What needs to be done?" autofocus>
 	  <ul class="button-group even three-up">
     <li>     <a href="#/" class="button">all</a> </li>
