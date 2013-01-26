@@ -11,6 +11,7 @@
   <!-- CSS -->
   <!-- ========= -->
   <style type="text/css">
+
     #todoapp ul {
       list-style-type: none; /* Hides bullet points from todo list */
     }
@@ -24,6 +25,15 @@
     #todo-list .editing .label {
       display: none; /* Hides label text when .editing*/
     }
+
+    #todo-list .editing .toggle {
+      display: none; /* Hides label text when .editing*/
+    }
+
+    #todo-list .editing .destroy {
+      display: none; /* Hides label text when .editing*/
+    }
+
     #todo-list .editing input.edit {
       display: inline; /* Shows input text box when .editing*/
     }
@@ -41,16 +51,19 @@
   <!-- ========= -->
   <!-- Your HTML -->
   <!-- ========= -->
+
+<!--Based on code from <a href="http://adrianmejia.com/blog/2012/09/11/backbone-dot-js-for-absolute-beginners-getting-started/">here</a>-->
+
 <div class="row">
   <section id="todoapp">
 <div class="twelve columns">
       
-      <h1>Todos</h1>
-      <input id="new-todo" placeholder="What needs to be done?" autofocus>
-	  <ul class="button-group">
-    <li>     <a href="#/" class="button small">show all</a> </li>
-  <li> <a href="#/pending" class="button small">show pending</a> </li>
-  <li> <a href="#/completed" class="button small">show completed</a></li>
+      <h2>Todos</h2>
+      <input id="new-todo" class="twelve" placeholder="What needs to be done?" autofocus>
+	  <ul class="button-group even three-up">
+    <li>     <a href="#/" class="button">all</a> </li>
+  <li> <a href="#/pending" class="button">pending</a> </li>
+  <li> <a href="#/completed" class="button">completed</a></li>
 	</ul>
       <ul id="todo-list"></ul>
 
@@ -62,13 +75,21 @@
   <!-- Templates -->
   <script type="text/template" id="item-template">
     <div class="view">
+	<table class="twelve">
+	<tbody><tr> <td class="one">
       <input class="toggle" type="checkbox" <%= completed ? 'checked' : '' %>>
+</td><td class="eight"><p>
       <span class="label"><%- title %></span>
 	  <div class="alert-box">
-      <input class="edit" value="<%- title %>">
-</div>
+      <input class="edit" value="<%- title %>"></p>
+	</div>
+</td><td class="three">
       <button class="destroy">remove</button>
-    </div>
+</td></tr>
+  </tbody>
+</table>
+     </div>
+
   </script>
 
   <!-- ========= -->
